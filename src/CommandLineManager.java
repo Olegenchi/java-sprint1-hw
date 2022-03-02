@@ -19,7 +19,7 @@ public class CommandLineManager {
             if (command == 1) {
                 enterAmountOfSteps();
             } else if (command == 2) {
-                statisticOfmonth();
+                statsOfMonth();
             } else if (command == 3) {
                 targetOfSteps();
             } else if (command == 0) {
@@ -44,7 +44,7 @@ public class CommandLineManager {
         stepTracker.changeTargetStepsDay(newTargetSteps);
     }
 
-    private void statisticOfmonth() {
+    private void statsOfMonth() {
         System.out.println("За какой месяц вывести статистику?");
         System.out.println("Пример: 1 - Январь, 2 - Февраль, ... , 12 - Декабрь.");
         int month = scanner.nextInt();
