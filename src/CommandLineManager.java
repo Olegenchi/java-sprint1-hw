@@ -1,9 +1,7 @@
 import java.util.Scanner;
 
 public class CommandLineManager {
-
     Scanner scanner = new Scanner(System.in);
-
     StepTracker stepTracker;
 
     public CommandLineManager(StepTracker stepTracker) {
@@ -11,18 +9,24 @@ public class CommandLineManager {
     }
 
     void printMenuAndHandleCommand () {
+
+        final int EXIT = 0;
+        final int ADD_STEPS_PER_DAY = 1;
+        final int PRINT_STAT_PER_MONTH = 2;
+        final int CHANGE_TARGET_STEPS_DAY = 3;
+
         while (true) {
             printMenu();
 
             int command = scanner.nextInt();
 
-            if (command == 1) {
+            if (command == ADD_STEPS_PER_DAY) {
                 enterAmountOfSteps();
-            } else if (command == 2) {
+            } else if (command == PRINT_STAT_PER_MONTH) {
                 statsOfMonth();
-            } else if (command == 3) {
+            } else if (command == CHANGE_TARGET_STEPS_DAY) {
                 targetOfSteps();
-            } else if (command == 0) {
+            } else if (command == EXIT) {
                 System.out.println("Выход.");
                 break;
             } else {
